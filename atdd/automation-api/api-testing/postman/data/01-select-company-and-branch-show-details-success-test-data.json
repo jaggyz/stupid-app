@@ -1,0 +1,122 @@
+[
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Head Office",
+    "expectedAddress": "99 Moo 5, Ban Rakat, Bang Bo, Samut Prakan 10560 Thailand",
+    "expectedBranchNo": "00000"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Gateway",
+    "expectedAddress": "74 Moo 9, Hua Samrong, Plaengyao, Chachoengsao 24190 Thailand",
+    "expectedBranchNo": "00003"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Ban Pho",
+    "expectedAddress": "99 Moo 2, Lat Khwang, Ban Pho, Chachoengsao 24140 Thailand",
+    "expectedBranchNo": "00004"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Bangpakong",
+    "expectedAddress": "700/187,700/189 Moo 1, Ban Kao, Phan Thong, Chon Buri 20160 Thailand",
+    "expectedBranchNo": "00005"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Amata(AM)",
+    "expectedAddress": "700/109,111,113 Moo 1, Bangna-Trad Road, Ban Kao, Phan Thong, Chon Buri 20160 Thailand",
+    "expectedBranchNo": "00006"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "APSTC",
+    "expectedAddress": "274 Moo 9, Thepharak, Muang Samut Prakan, Samut Prakan 10270 Thailand",
+    "expectedBranchNo": "00007"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Samrong",
+    "expectedAddress": "186/1 Moo 1, Old Railway Road, Samrong Tai, Phrapradaeng, Samut Prakan 10130 Thailand",
+    "expectedBranchNo": "00010"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "TAW",
+    "expectedAddress": "187 Moo 9, Old Railway Road, Thepharak, Muang Samut Prakan, Samut Prakan 10270 Thailand",
+    "expectedBranchNo": "00011"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Amata(AT)",
+    "expectedAddress": "700/192 Moo 1, Bangna-Trad Road, Ban Kao, Phan Thong, Chon Buri 20160 Thailand",
+    "expectedBranchNo": "00012"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "TPCAP",
+    "expectedAddress": "99/9 Moo 2, Lat Kwang, Ban Pho, Chachoengsao 24140 Thailand",
+    "expectedBranchNo": "00013"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "AP-GPC",
+    "expectedAddress": "99/8 Moo 2, Lat Kwang, Ban Pho, Chachoengsao 24140 Thailand",
+    "expectedBranchNo": "00014"
+  },
+  {
+    "companyAbbr": "TMATH",
+    "companyName": "TOYOTA MOTOR ASIA (THAILAND) CO., LTD.",
+    "companyTaxId": "0115546006888",
+    "branchName": "Test Building 3",
+    "expectedAddress": "99/1 moo 5, Ban Ra Kat, Bang Bo, Samut Prakan 10560",
+    "expectedBranchNo": "00015"
+  },
+  {
+    "companyAbbr": "STM",
+    "companyName": "SIAM TOYOTA MANUFACTURING CO., LTD.",
+    "companyTaxId": "0105530032434",
+    "branchName": "Head Office",
+    "expectedAddress": "700/109,111,113 Moo1, Bangna-Trat Road, Ban Kao, Phan Thong, Chon Buri 20160 Thailand",
+    "expectedBranchNo": "00000"
+  },
+  {
+    "companyAbbr": "STM",
+    "companyName": "SIAM TOYOTA MANUFACTURING CO., LTD.",
+    "companyTaxId": "0105530032434",
+    "branchName": "Branch 2",
+    "expectedAddress": "700/192 Moo1, Bangna-Trat Road, Ban Kao, Phan Thong, Chon Buri 20160 Thailand",
+    "expectedBranchNo": "00002"
+  },
+  {
+    "companyAbbr": "TMT",
+    "companyName": "TOYOTA MOTOR THAILAND CO.,LTD.",
+    "companyTaxId": "0105505001679",
+    "branchName": "Head Office",
+    "expectedAddress": "186/1 MOO 1, OLD RAILWAY ROAD, T. SAMRONG TAI, A. PHRA PRADAENG, SAMUT PRAKAN 10130",
+    "expectedBranchNo": "00000"
+  }
+]

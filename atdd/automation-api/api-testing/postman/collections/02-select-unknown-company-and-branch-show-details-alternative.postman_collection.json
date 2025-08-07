@@ -1,14 +1,14 @@
 {
 	"info": {
 		"_postman_id": "c1cab9a9-0453-42f4-923e-8fdca24bd7b8",
-		"name": "02-select-branch-show-details-alternative",
+		"name": "02-select-unknown-company-and-branch-show-details-alternative",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "47276959",
 		"_collection_link": "https://atichapre-9216208.postman.co/workspace/TMATH-API-TESTING~72f5efcc-609b-41da-8373-2bfd88df228f/collection/47276959-c1cab9a9-0453-42f4-923e-8fdca24bd7b8?action=share&source=collection_link&creator=47276959"
 	},
 	"item": [
 		{
-			"name": "select-companyname-TMASG",
+			"name": "select-companyname",
 			"event": [
 				{
 					"listen": "test",
@@ -16,6 +16,12 @@
 						"exec": [
 							"pm.test(\"Status code is 404\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"const companyAbbr = jsonData.companyAbbr;\r",
+							"\r",
+							"pm.test(`Return error when selecting unknown company`, function () {\r",
+							"    pm.expect(companyAbbr, `${data.unknownCompanyAbbr} not found`).to.be.undefined;\r",
 							"});\r",
 							"\r",
 							""
@@ -29,13 +35,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
 						"key": "companyAbbr",
-						"value": "TMASG",
+						"value": "{{unknownCompanyAbbr}}",
 						"type": "text"
 					}
 				],
