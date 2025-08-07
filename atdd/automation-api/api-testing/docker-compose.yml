@@ -16,4 +16,4 @@ services:
       - 'host.docker.internal:host-gateway'
     environment:
       ENV_DEFAULT_FILE: './environments/default.postman_environment.json'
-      BASE_URL_API: 'http://host.docker.internal:8002'
+      BASE_URL_API: 'http://host.docker.internal:8080'
