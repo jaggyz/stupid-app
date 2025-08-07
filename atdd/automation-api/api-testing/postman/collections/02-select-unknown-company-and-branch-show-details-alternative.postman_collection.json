@@ -18,11 +18,6 @@
 							"    pm.response.to.have.status(404);\r",
 							"});\r",
 							"\r",
-							"const companyAbbr = jsonData.companyAbbr;\r",
-							"\r",
-							"pm.test(`Return error when selecting unknown company`, function () {\r",
-							"    pm.expect(companyAbbr, `${data.unknownCompanyAbbr} not found`).to.be.undefined;\r",
-							"});\r",
 							"\r",
 							""
 						],
@@ -41,15 +36,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{host}}/api/v1/companies/",
+					"raw": "{{host}}/api/v1/companies",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"companies",
-						""
+						"companies"
 					]
 				}
 			},

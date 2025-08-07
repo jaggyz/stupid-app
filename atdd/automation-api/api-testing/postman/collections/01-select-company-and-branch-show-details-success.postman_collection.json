@@ -60,15 +60,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{host}}/api/v1/companies/",
+					"raw": "{{host}}/api/v1/companies",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"companies",
-						""
+						"companies"
 					]
 				}
 			},
@@ -122,15 +121,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{host}}/api/v1/companies/",
+					"raw": "{{host}}/api/v1/companies",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"companies",
-						""
+						"companies"
 					]
 				}
 			},
