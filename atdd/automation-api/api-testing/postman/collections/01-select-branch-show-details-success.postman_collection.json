@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "cf892bfe-3f54-4b42-be5a-20a926514326",
+		"name": "01-select-branch-show-details-success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47276959",
+		"_collection_link": "https://atichapre-9216208.postman.co/workspace/TMATH-API-TESTING~72f5efcc-609b-41da-8373-2bfd88df228f/collection/47276959-cf892bfe-3f54-4b42-be5a-20a926514326?action=share&source=collection_link&creator=47276959"
+	},
+	"item": [
+		{
+			"name": "select-companyname-TMATH",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Company Abbr is TMATH\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.companyAbbr).to.eql(\"TMATH\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Company Name is TOYOTA MOTOR ASIA (THAILAND) CO., LTD.\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.companyName).to.eql(\"TOYOTA MOTOR ASIA (THAILAND) CO., LTD.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Company Tax ID is 01115546006888\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.companyTaxId).to.be.a(\"string\");\r",
+							"    pm.expect(jsonData.companyTaxId).to.eql(\"01115546006888\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Company has 12 branches\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const branches = jsonData.companyBranches;\r",
+							"\r",
+							"    // Check that there are exactly 12 branches\r",
+							"    pm.expect(branches.length).to.eql(12);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each branch has a unique address\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const addresses = jsonData.companyBranches.map(branch => branch.address.trim());\r",
+							"\r",
+							"    const uniqueAddresses = [...new Set(addresses)];\r",
+							"    pm.expect(uniqueAddresses.length).to.eql(12);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each branch has a unique branch no.\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const branchNumbers = jsonData.companyBranches.map(branch => branch.branchNo.trim());\r",
+							"\r",
+							"    const uniqueBranchNumbers = [...new Set(branchNumbers)];\r",
+							"    pm.expect(uniqueBranchNumbers.length).to.eql(12);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "companyAbbr",
+						"value": "TMATH",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/companies/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"companies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "select-branch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"const branches = jsonData.companyBranches;\r",
+							"\r",
+							"const branch = branches.find(b => b.branchName === data.branchName);\r",
+							"\r",
+							"pm.test(`${data.branchName} exists`, function () {\r",
+							"    pm.expect(branch, `${data.branchName} not found`).to.not.be.undefined;\r",
+							"});\r",
+							"\r",
+							"if (branch) {\r",
+							"    pm.test(`${data.branchName} has correct address`, function () {\r",
+							"        pm.expect(branch.address).to.eql(data.expectedAddress);\r",
+							"    });\r",
+							"\r",
+							"    pm.test(`${data.branchName} has correct branch number`, function () {\r",
+							"        pm.expect(branch.branchNo).to.eql(data.expectedBranchNo);\r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "companyAbbr",
+						"value": "TMATH",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/companies/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"companies",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

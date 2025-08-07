@@ -1,0 +1,19 @@
+# Start APIs Testing
+services:
+  api-test:
+    image: api-test:latest
+    container_name: api-test
+    build:
+      context: ./postman
+      dockerfile: Dockerfile
+    volumes:
+      - ./postman/collections:/etc/newman/collections
+      - ./postman/data:/etc/newman/data
+      - ./postman/environments:/etc/newman/environments
+      - ./postman/files:/etc/newman/files
+      - ./postman/reports:/etc/newman/reports
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    environment:
+      ENV_DEFAULT_FILE: './environments/default.postman_environment.json'
+      BASE_URL_API: 'http://host.docker.internal:8002'

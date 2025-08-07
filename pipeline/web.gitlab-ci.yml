@@ -1,0 +1,33 @@
+.web-common:
+  rules:
+    - changes:
+        - web/*
+
+build-push-web-image:
+  extends: .web-common
+  stage: build-push
+  image:
+    name: $DOMAIN_NAME_TCR/software-development-executor/gcr.io/kaniko-project/executor:v1.23.2-debug
+    entrypoint: [""]
+  before_script:
+    - echo "$TCR_CERTIFICATE" >> /kaniko/ssl/certs/ca-certificates.crt
+  script:
+    - echo "WEB_IMAGE_NAME $WEB_IMAGE_NAME"
+    - echo "CI_PROJECT_DIR $CI_PROJECT_DIR"
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$DOMAIN_NAME_TCR\":{\"auth\":\"$(printf "%s:%s" "$TCR_ROBOT_ACCOUNT" "$TCR_ROBOT_TOKEN" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "$CI_PROJECT_DIR"
+      --dockerfile "$CI_PROJECT_DIR/web/Dockerfile"
+      --destination "$WEB_IMAGE_NAME"
+
+deploy-web-image:
+  extends: .web-common
+  stage: deploy
+  image: $DOMAIN_NAME_TCR/hubdocker/openshift/origin-cli
+  before_script:
+    - oc login "$OCP_NONPROD_URL" --token="$OCP_TOKEN_DEV" --insecure-skip-tls-verify --loglevel=8
+    - oc project $OCP_NAMESPACE_DEV 2> /dev/null
+  script:
+    - oc set image deployment/nam1-web nam1-web=$WEB_IMAGE_NAME
+    - oc rollout status deployment/nam1-web
